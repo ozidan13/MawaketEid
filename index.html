@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مواقيت صلاة العيد في مصر 2025</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        .header {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .select-container {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        select {
+            width: 80%;
+            padding: 12px;
+            font-size: 18px;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            cursor: pointer;
+        }
+        .result {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+        .result h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .time {
+            font-size: 36px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 15px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .eid-mubarak {
+            text-align: center;
+            font-size: 24px;
+            color: #27ae60;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>مواقيت صلاة عيد الفطر المبارك 2025</h1>
+        </div>
+        
+        <div class="select-container">
+            <select id="citySelect" onchange="showPrayerTime()">
+                <option value="">-- اختر محافظتك --</option>
+                <option value="5:53">حلايب</option>
+                <option value="5:57">شلاتين</option>
+                <option value="5:57">طابا</option>
+                <option value="5:59">نويبع</option>
+                <option value="6:00">شرم الشيخ</option>
+                <option value="6:01">العريش</option>
+                <option value="6:01">سانت كاترين</option>
+                <option value="6:03">الطور</option>
+                <option value="6:03">الغردقة</option>
+                <option value="6:07">بورسعيد</option>
+                <option value="6:07">السويس</option>
+                <option value="6:07">الإسماعيلية</option>
+                <option value="6:07">قنا</option>
+                <option value="6:07">أسوان</option>
+                <option value="6:09">دمياط</option>
+                <option value="6:10">الزقازيق</option>
+                <option value="6:11">المنصورة</option>
+                <option value="6:11">سوهاج</option>
+                <option value="6:12">الجيزة</option>
+                <option value="6:12">طنطا</option>
+                <option value="6:12">بنها</option>
+                <option value="6:13">بني سويف</option>
+                <option value="6:13">أسيوط</option>
+                <option value="6:13">أبو سمبل</option>
+                <option value="6:13">القاهرة</option>
+                <option value="6:13">شبين الكوم</option>
+                <option value="6:13">كفر الشيخ</option>
+                <option value="6:14">دمنهور</option>
+                <option value="6:14">الفيوم</option>
+                <option value="6:14">المنيا</option>
+                <option value="6:16">الإسكندرية</option>
+                <option value="6:17">الخارجة</option>
+                <option value="6:27">مرسى مطروح</option>
+                <option value="6:35">السلوم</option>
+            </select>
+        </div>
+        
+        <div id="result" class="result">
+            <h2 id="cityName"></h2>
+            <div class="time" id="prayerTime"></div>
+            <p>موعد صلاة عيد الفطر المبارك 2025</p>
+        </div>
+        
+        <div class="eid-mubarak">كل عام وأنتم بخير 🌙 تقبل الله طاعاتكم</div>
+        
+        <div class="footer">
+            <p>جميع المواقيت حسب الحسابات الفلكية الصادرة عن المعهد القومي للبحوث الفلكية بمصر</p>
+            <p>© 2025 مواقيت الصلاة</p>
+        </div>
+    </div>
+
+    <script>
+        function showPrayerTime() {
+            const select = document.getElementById('citySelect');
+            const resultDiv = document.getElementById('result');
+            const cityName = document.getElementById('cityName');
+            const prayerTime = document.getElementById('prayerTime');
+            
+            const selectedOption = select.options[select.selectedIndex];
+            
+            if (selectedOption.value) {
+                cityName.textContent = selectedOption.text;
+                prayerTime.textContent = selectedOption.value + ' صباحًا';
+                resultDiv.style.display = 'block';
+            } else {
+                resultDiv.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
